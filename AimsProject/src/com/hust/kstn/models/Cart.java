@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 public class Cart {
 	private static final int MAX_NUMBER_ORDERED = 20;
-	private DigitalVideoDisc[] itemsInCart = new DigitalVideoDisc[MAX_NUMBER_ORDERED];
+	public static DigitalVideoDisc[] itemsInCart = new DigitalVideoDisc[MAX_NUMBER_ORDERED];
 	
 	// đếm cập nhật số lượng dvd
 	public int qtyOrdered() {
@@ -27,6 +27,25 @@ public class Cart {
 			System.out.println("The disc has been added sucessfully");
 		}
 	}
+
+    public void addDVD(DigitalVideoDisc disc1, DigitalVideoDisc disc2) {
+		if (qtyOrdered()==20) {
+			System.out.println("The cart is almost full");
+		}
+		else if (qtyOrdered()<20) {
+			itemsInCart[qtyOrdered()] = disc1;
+			System.out.println("The disc1 has been added sucessfully");
+		}
+		if (qtyOrdered()==20) {
+			System.out.println("The cart is almost full");
+		}
+		else if (qtyOrdered()<20) {
+			itemsInCart[qtyOrdered()] = disc2;
+			System.out.println("The disc2 has been added sucessfully");
+		}
+	}
+
+    
 	
 	// xoá dvd
 	public void removeDVD(DigitalVideoDisc disc) {
