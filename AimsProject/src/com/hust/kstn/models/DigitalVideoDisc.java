@@ -5,8 +5,9 @@ public class DigitalVideoDisc {
 	private String category;
 	private String director;
 	private int length;
-	private String id;
+	private int id;
 	private double price;
+	private static int nbDigitalVideoDiscs = 0;
 	public String getTitle() {
 		return title;
 	}
@@ -19,18 +20,19 @@ public class DigitalVideoDisc {
 	public int getLength() {
 		return length;
 	}
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 	public double getPrice() {
 		return price;
 	}
-	public DigitalVideoDisc(String title, String category, String director, String id, 
+	public DigitalVideoDisc(String title, String category, String director, 
 			int length, double price){
+		nbDigitalVideoDiscs += 1;
 		this.title= title;
 		this.category = category;
 		this.director = director;
-		this.id = id;
+		this.id = nbDigitalVideoDiscs;
 		this.length = length;
 		this.price = price;
 	}
