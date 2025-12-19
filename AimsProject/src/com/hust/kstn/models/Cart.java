@@ -27,7 +27,7 @@ public class Cart {
 			System.out.println("The disc has been added sucessfully");
 		}
 	}
-
+        // thêm 2 dvd
     public void addDVD(DigitalVideoDisc disc1, DigitalVideoDisc disc2) {
 		if (qtyOrdered()==20) {
 			System.out.println("The cart is almost full");
@@ -44,8 +44,18 @@ public class Cart {
 			System.out.println("The disc2 has been added sucessfully");
 		}
 	}
-
-    
+        // thêm dvd theo mảng cho trước
+    public void addDVD(DigitalVideoDisc[] disc) {
+		for (DigitalVideoDisc disc_ : disc) {
+		if (qtyOrdered()==20) {
+			System.out.println("The cart is almost full");
+		}
+		else if (qtyOrdered()<20 && disc_ != null) {
+			itemsInCart[qtyOrdered()] = disc_;
+			System.out.println("The disc has been added sucessfully");
+		}
+		}
+	}
 	
 	// xoá dvd
 	public void removeDVD(DigitalVideoDisc disc) {
